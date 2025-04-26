@@ -11,7 +11,15 @@ Build the project and run `checker.exe` from the command line.
 
 _Example_
 
-`checker.exe <root><child></child><child></child></root>`
+```
+checker.exe <root><child></child><child></child></root>
+Valid
+```
+
+```
+checker.exe <root></child></root>
+Invalid
+```
 
 ### Features
 
@@ -37,4 +45,5 @@ A string is considered a valid XML string if it meets the following conditions:
   - `<tutorial date="01/01/2000">XML</tutorial>` is invalid because the tags differ
   - `<tutorial date="01/01/2000">XML</tutorial date="01/01/2000">` is valid.
 - If any XML tag contains an empty string, the validation result is false. For example `<></>` is invalid.
+- Whitespace also must match exactly inside the opening and corresponding closing tags. For example `<xml></xml >` is invalid.
   
