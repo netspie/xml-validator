@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLValidator", "XMLValidator\XMLValidator.csproj", "{F84F38BE-EF13-4503-9F01-F6118FF6F819}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLValidator.Tests", "XMLValidator.Tests\XMLValidator.Tests.csproj", "{27F0F4D6-1FAA-4194-ACD6-E821D20E91C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F84F38BE-EF13-4503-9F01-F6118FF6F819}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F84F38BE-EF13-4503-9F01-F6118FF6F819}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F84F38BE-EF13-4503-9F01-F6118FF6F819}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F84F38BE-EF13-4503-9F01-F6118FF6F819}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27F0F4D6-1FAA-4194-ACD6-E821D20E91C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27F0F4D6-1FAA-4194-ACD6-E821D20E91C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27F0F4D6-1FAA-4194-ACD6-E821D20E91C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27F0F4D6-1FAA-4194-ACD6-E821D20E91C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,107 @@
+﻿, false
+<, false
+>, false
+<>, false
+</>, false
+<><>, false
+<></>, false
+<x></>, false
+<xml></xml>,true
+<xml><xml></xml></xml>,true
+<xml><xml>zxc</xml></xml>,true
+<tutorial date="01/01/2000">XML</tutorial date="01/01/2000">,true
+<tutorial date="01/01/2000">XML</tutorial>,false
+<Design><Code>hello world</Code></Design>,true
+<Design><Code>hello world</Code></Design><People>,false
+<People><Design><Code>hello world</People></Code></Design>,false
+<People age=”1”>hello world</People>,false
+<data></data>,true
+<data id="1"></data id="1">,true
+<data id="1" id="2"></data id="1" id="2">,true
+<data name="foo"></data name="foo">,true
+<root><child></child></root>,true
+<root><child id="123"></child id="123"></root>,true
+<root><child id="123" value="abc"></child id="123" value="abc"></root>,true
+<root><child id="1"></child id="2"></root>,false
+<root><child id="1" value="a"></child id="1" value="a"></root>,true
+<root><child id="1" value="a"></child id="1"></root>,false
+<data></data id="1">,false
+<data id="1"></data>,false
+<data id="1"></data id="2">,false
+<root><child/><child/></root>,false
+<root><child></child><child></child></root>,true
+<root><child><nested></nested></child></root>,true
+<root><child><nested id="a"></nested id="a"></child></root>,true
+<root><child><nested id="a"></nested id="b"></child></root>,false
+<data><nested><deep></deep></nested></data>,true
+<data><nested><deep id="1"></deep id="1"></nested></data>,true
+<item></item>,true
+<item attr="value"></item attr="value">,true
+<item attr="value"></item>,false
+<item><subitem></subitem></item>,true
+<item><subitem attr="x"></subitem attr="x"></item>,true
+<item><subitem attr="x"></subitem></item>,false
+<data><node><leaf></leaf></node></data>,true
+<data><node><leaf attr="a"></leaf attr="a"></node></data>,true
+<data><node><leaf attr="a"></leaf attr="b"></node></data>,false
+<outer><middle><inner></inner></middle></outer>,true
+<outer><middle><inner attr="1"></inner attr="1"></middle></outer>,true
+<outer><middle><inner attr="1"></inner></middle></outer>,false
+<tag></tag>,true
+<tag id="5"></tag id="5">,true
+<tag id="5"></tag id="6">,false
+<tag><child><subchild></subchild></child></tag>,true
+<tag><child><subchild></subchild id="x"></child></tag>,false
+<tag><child><subchild id="x"></subchild id="x"></child></tag>,true
+<tag><child><subchild id="x"></subchild></child></tag>,false
+<user><info></info></user>,true
+<user><info id="u1"></info id="u1"></user>,true
+<user><info id="u1"></info id="u2"></user>,false
+<config><setting></setting></config>,true
+<config><setting name="debug"></setting name="debug"></config>,true
+<config><setting name="debug"></setting></config>,false
+<store><item><name>Apple</name><price>1.5</price></item></store>,true
+<store><item id="1"><name>Apple</name><price>1.5</price></item></store>,false
+<store><item id="1" name="Apple"><price>1.5</price></item></store>,false
+<store><item id="1" name="Apple" price="1.5"></item id="1" name="Apple" price="1.5"></store>,true
+<store><item id="1" name="Apple"><price>1.5</price></item id="2"></store>,false
+<store><item id="1" name="Apple"><price>1.5</price><stock>10</stock></item></store>,false
+<store><item id="1" name="Apple" price="1.5"><price>1.6</price></item></store>,false
+<store><item><price>1.5</price><stock>10</stock><item></store>,false
+<store><item><name>Apple</name><price>1.5</price><stock></item></store>,false
+<store><item><name>Apple</name><price>1.5</price><stock>10</item></stock></store>,false
+<root><node><leaf><subleaf><deep></deep></subleaf></leaf></node></root>,true
+<root><node><leaf><subleaf><deep id="1"></deep></subleaf></leaf></node></root>,false
+<root><node><leaf><subleaf><deep></deep></subleaf></leaf><node></root>,false
+<root><node><leaf><subleaf><deep></subleaf></leaf></node></root>,false
+<root><node><leaf id="a"><subleaf></subleaf></leaf></node></root>,false
+<root><node><leaf><subleaf id="1"></subleaf id="1"></leaf></node></root>,true
+<root><node><leaf><subleaf></subleaf><subleaf></subleaf></leaf></node></root>,true
+<root><node><leaf><subleaf><deep></subleaf></leaf></node></root>,false
+<root><node><leaf id="1"><subleaf id="2"></subleaf></leaf></node></root>,false
+<root><node><leaf id="1"><subleaf id="2"></subleaf></leaf id="1"></node></root>,false
+<data><user><name>John</name><age>30</age><user></data>,false
+<data><user><name>John</name><age>30</age></user></data>,true
+<root><node><leaf id=\"a\"><subleaf></subleaf></leaf></node></root>
+<data><user><name>John</name><age>30</age></user id="1"></data>,false
+<data><user><name>John</name><address><city>NYC</city></address></user></data>,true
+<data><user><name>John</name><address><city>NYC</city></address></user><address></data>,false
+<data><user><name>John</name><address><city></city></address></user></data>,true
+<data><user id="1"><name>John</name></user><user id="1"></data>,false
+<document><chapter><section><title>Introduction</title></section></chapter></document>,true
+<document><chapter><section><title>Introduction</title><section></chapter></document>,false
+<document><chapter><section><title>Introduction</title></chapter></section></document>,false
+<document><chapter><section><title>Introduction</title></section><section></document>,false
+<book><author><name>Jane</name><book></author></book>,false
+<book><author><name>Jane</name></author><book></book>,false
+<book><author><name>Jane</name></author><title>XML Guide</title></book>,true
+<book><author><name>Jane</name><author></book>,false
+<menu><item><name>Pizza</name><price>8</price><item></menu>,false
+<menu><item><name>Pizza</name><price>8</price></item></menu>,true
+<menu><item id="1" name="Pizza"><price>8</price></item id="1" name="Pizza"></menu>,true
+<menu><item id="1" name="Pizza"><price>8</price><item></menu>,false
+<note><to>Tove</to><from>John</from><heading>Reminder</heading><body>Don't forget me this weekend!</body></note>,true
+<note><to>Tove</to><from>John</from><heading>Reminder</heading><body>Don't forget me this weekend!</to></note>,false
+<note><to>Tove</to><from>John</from><heading>Reminder</heading><body></body></note>,true
+asd<note><to>Tove</to><from>John</from><heading>Reminder</heading><body></body></note>,false
+<note><to>Tove</to><from>John</from><heading>Reminder</heading><body></body></note>dsaf,false
