@@ -1,6 +1,6 @@
 ﻿namespace XMLValidator.Tests;
 
-public class XMLStringValidationExtensionsTests
+public class XMLValidatorTests
 {
     [TestCaseSource(nameof(XmlTestCases))]
     public void IsXML(string input, bool expectedResult)
@@ -17,7 +17,7 @@ public class XMLStringValidationExtensionsTests
     public void GetNextXMLTag_Opening(string input, int startIndex, bool expectedResult, int expectedEndIndex)
     {
         int endIndex;
-        bool result = input.GetNextXMLTag(tagOpening: "<", startIndex: startIndex, out endIndex, out var _);
+        bool result = input.StartsWithTag(tagOpening: "<", startIndex: startIndex, out endIndex, out var _);
 
         Assert.That(result, Is.EqualTo(expectedResult));
         Assert.That(endIndex, Is.EqualTo(expectedEndIndex));
@@ -31,7 +31,7 @@ public class XMLStringValidationExtensionsTests
     public void GetNextXMLTag_Closing(string input, int startIndex, bool expectedResult, int expectedEndIndex)
     {
         int endIndex;
-        bool result = input.GetNextXMLTag(tagOpening: "</", startIndex: startIndex, out endIndex, out var _);
+        bool result = input.StartsWithTag(tagOpening: "</", startIndex: startIndex, out endIndex, out var _);
 
         Assert.That(result, Is.EqualTo(expectedResult));
         Assert.That(endIndex, Is.EqualTo(expectedEndIndex));

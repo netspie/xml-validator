@@ -8,7 +8,7 @@ public static class XMLValidator
 
     public static bool IsXML(this string xml)
     {
-        if (!xml.GetNextXMLTag(OpeningTagStartStr, startIndex: 0, out var endIndex, out var openingTagName))
+        if (!xml.StartsWithTag(OpeningTagStartStr, startIndex: 0, out var endIndex, out var openingTagName))
             return false;
 
         var tagNameStack = new Stack<string>([openingTagName]);
@@ -16,7 +16,7 @@ public static class XMLValidator
         int i = endIndex + 1;
         while (i < xml.Length)
         {
-            if (xml.GetNextXMLTag(ClosingTagStartStr, startIndex: i, out endIndex, out var closingTagName))
+            if (xml.StartsWithTag(ClosingTagStartStr, startIndex: i, out endIndex, out var closingTagName))
             {
                 openingTagName = tagNameStack.Pop();
                 if (openingTagName != closingTagName)
@@ -25,7 +25,7 @@ public static class XMLValidator
                 i = endIndex + 1;
             }
             else
-            if (xml.GetNextXMLTag(OpeningTagStartStr, startIndex: i, out endIndex, out openingTagName))
+            if (xml.StartsWithTag(OpeningTagStartStr, startIndex: i, out endIndex, out openingTagName))
             {
                 tagNameStack.Push(openingTagName);
                 i = endIndex + 1;
@@ -39,7 +39,7 @@ public static class XMLValidator
         return tagNameStack.Count == 0 && xml.Last() is TagEndStr;
     }
 
-    public static bool GetNextXMLTag(this string xml, string tagOpening, int startIndex, out int endIndex, out string name)
+    public static bool StartsWithTag(this string xml, string tagOpening, int startIndex, out int endIndex, out string name)
     {
         endIndex = -1;
         name = "";
