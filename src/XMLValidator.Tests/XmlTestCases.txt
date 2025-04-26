@@ -3,9 +3,11 @@
 >, false
 <>, false
 </>, false
+<xml/>, false
 <><>, false
 <></>, false
 <x></>, false
+<xml></xml >,false
 <xml></xml>,true
 <xml><xml></xml></xml>,true
 <xml><xml>zxc</xml></xml>,true
@@ -28,8 +30,10 @@
 <data></data id="1">,false
 <data id="1"></data>,false
 <data id="1"></data id="2">,false
+<root></child></root>,false
 <root><child/><child/></root>,false
 <root><child></child><child></child></root>,true
+<root><></><child></child></root>,false
 <root><child><nested></nested></child></root>,true
 <root><child><nested id="a"></nested id="a"></child></root>,true
 <root><child><nested id="a"></nested id="b"></child></root>,false
