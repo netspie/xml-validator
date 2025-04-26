@@ -2,6 +2,10 @@
 
 Simple xml validator
 
+### Technology
+
+.NET 9, C# 13, NUnit
+
 ### Usage
 
 Build the project and run `checker.exe` from the command line.
